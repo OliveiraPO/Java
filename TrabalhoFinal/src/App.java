@@ -1,18 +1,13 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
+//import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import controler.VeiculoController;
 
-import java.time.LocalDate;
-
-import model.Carro;
-import model.Locacao;
-import model.Cliente;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         /*Cliente user1 = new Cliente("Vinícius", "995862760", "vini@ioto.com",
          "32975275269", LocalDate.parse("15/04/2003",formatter));
 
@@ -33,14 +28,26 @@ public class App {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. Cadastrar veículo");
-        System.out.println("Escolha uma opção: ");
+        System.out.println("2. Veículos disponíveis");
+        System.out.println("3. Alterar diária do veículo");
+        System.out.println("4. Deletar veículo");
         System.out.println("0. Sair");
+        System.out.println("Escolha uma opção: ");
         escolha = scanner.nextInt();
 
         switch (escolha) {
           case 1:
               VeiculoController.cadastrarVeiculo();
             break;
+          case 2:
+              VeiculoController.listaVeiculos();
+          break;
+          case 3:
+              VeiculoController.alterarVeiculo();
+          break;
+          case 4:
+              VeiculoController.deletarVeiculo();
+          break;
         
           default:
             break;

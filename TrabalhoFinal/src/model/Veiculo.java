@@ -27,9 +27,17 @@ public abstract class Veiculo {
 
     public abstract String getModelo();
 
+    public abstract int getAno();
+
+    public abstract void setDiaria(float diaria);
+
+    public abstract int getQuantidadeDisponivel();
+
+    public abstract void setQuantidadeDisponivel(int quantidadeDisponivel);
+
     @Override
     public String toString() {
-        return "Veículo\nId: " + id + "\nMarca: " + marca;
+        return "\nId: " + id + "\nMarca: " + marca;
     }
 
 }

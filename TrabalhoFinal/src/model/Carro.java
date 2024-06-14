@@ -3,14 +3,15 @@ package model;
 public class Carro extends Veiculo{
     private String modelo, marca;
     private float diaria;
-    private int assentos,ano;
+    private int assentos, ano, quantidadeDisponivel;
 
-    public Carro(int id, String marca, String modelo, int ano, float diaria, int assentos) {
+    public Carro(int id, String marca, String modelo, int ano, float diaria, int assentos, int quantidadeDisponivel) {
         super(id, marca);
         this.modelo = modelo;
         this.ano = ano;
         this.diaria = diaria;
         this.assentos = assentos;
+        this.quantidadeDisponivel = quantidadeDisponivel;
     }
     @Override
     public String getModelo() {
@@ -19,6 +20,7 @@ public class Carro extends Veiculo{
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+    @Override
     public int getAno() {
         return ano;
     }
@@ -29,6 +31,7 @@ public class Carro extends Veiculo{
     public float getDiaria() {
         return diaria;
     }
+    @Override
     public void setDiaria(float diaria) {
         this.diaria = diaria;
     }
@@ -45,8 +48,16 @@ public class Carro extends Veiculo{
         this.marca = marca;
     }
     @Override
+    public int getQuantidadeDisponivel() {
+        return quantidadeDisponivel;
+    }
+    @Override
+    public void setQuantidadeDisponivel(int quantidadeDisponivel) {
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+    @Override
     public String toString() {
-        return "Veículo: " + super.toString() + modelo + "\nDiaria: R$ " + diaria + 
+        return super.toString() + modelo + "\nAno: " + ano + "\nDiaria: R$ " + diaria + 
         "\nNúmero de lugares:" + assentos + "\n";
     }
 }

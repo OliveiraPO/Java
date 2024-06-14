@@ -32,13 +32,17 @@ public abstract class util {
             } 
         }return aux+1;       
     }
-    public static boolean verificarVeiculoExistente(List<Veiculo> lista, String modelo) {
+    public static Veiculo verificarVeiculoExistente(List<Veiculo> lista, String modelo, int ano) {
         for (Veiculo veiculo : lista) {
-            if (veiculo.getModelo().equalsIgnoreCase(modelo)) {
-                return true;
+            if (veiculo.getModelo().equalsIgnoreCase(modelo) && veiculo.getAno()==ano) {
+                return veiculo;
             }
         }
-        return false;
+        return null;
     }
+    public static void deletaVeiculo(List<Veiculo> lista, Veiculo veiculo){
+        lista.remove(veiculo);
+    }
+    //public static boolean alterarVeiculo();
 }
     

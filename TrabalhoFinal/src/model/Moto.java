@@ -3,13 +3,14 @@ package model;
 public class Moto extends Veiculo{
     private String modelo;
     private float diaria;
-    private int ano;
+    private int ano, quantidadeDisponivel;
 
-    public Moto(int id, String marca, String modelo, int ano, float diaria) {
+    public Moto(int id, String marca, String modelo, int ano, float diaria, int quantidadeDisponivel) {
         super(id, marca);
         this.modelo = modelo;
         this.ano = ano;
         this.diaria = diaria;
+        this.quantidadeDisponivel = quantidadeDisponivel;
     }
 
     @Override
@@ -19,6 +20,7 @@ public class Moto extends Veiculo{
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+    @Override
     public int getAno() {
         return ano;
     }
@@ -29,12 +31,20 @@ public class Moto extends Veiculo{
     public float getDiaria() {
         return diaria;
     }
+    @Override
     public void setDiaria(float diaria) {
         this.diaria = diaria;
     }
-
+    @Override
+    public int getQuantidadeDisponivel() {
+        return quantidadeDisponivel;
+    }
+    @Override
+    public void setQuantidadeDisponivel(int quantidadeDisponivel) {
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
     @Override
     public String toString() {
-        return "Veículo: " + super.toString() + modelo + "\nDiaria: " + diaria + "\n";
+        return super.toString() + "\nModelo: " + modelo + "\nAno: " + ano + "\nDiaria: " + diaria + "\n";
     } 
 }
