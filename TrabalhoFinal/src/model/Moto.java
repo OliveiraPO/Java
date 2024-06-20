@@ -1,22 +1,25 @@
 package model;
 
 public class Moto extends Veiculo{
-    private String modelo;
+    private static final long serialVersionUID = 1L;
+    private String modelo, placa;
     private float diaria;
-    private int ano, quantidadeDisponivel;
+    private int ano, assentos;
 
-    public Moto(int id, String marca, String modelo, int ano, float diaria, int quantidadeDisponivel) {
+    public Moto(int id, String marca, String modelo, int ano, String placa, float diaria, int assentos) {
         super(id, marca);
         this.modelo = modelo;
         this.ano = ano;
+        this.placa = placa;
         this.diaria = diaria;
-        this.quantidadeDisponivel = quantidadeDisponivel;
+        this.assentos = assentos;
     }
 
     @Override
     public String getModelo() {
         return modelo;
     }
+    @Override
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
@@ -24,6 +27,7 @@ public class Moto extends Veiculo{
     public int getAno() {
         return ano;
     }
+    @Override
     public void setAno(int ano) {
         this.ano = ano;
     }
@@ -36,15 +40,22 @@ public class Moto extends Veiculo{
         this.diaria = diaria;
     }
     @Override
-    public int getQuantidadeDisponivel() {
-        return quantidadeDisponivel;
+    public String getPlaca() {
+        return placa;
     }
     @Override
-    public void setQuantidadeDisponivel(int quantidadeDisponivel) {
-        this.quantidadeDisponivel = quantidadeDisponivel;
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+    public int getAssentos() {
+        return assentos;
+    }
+    @Override
+    public void setAssentos(int assentos) {
+        this.assentos = assentos;
     }
     @Override
     public String toString() {
-        return super.toString() + "\nModelo: " + modelo + "\nAno: " + ano + "\nDiaria: " + diaria + "\n";
-    } 
+        return super.toString() + "\nModelo: " + modelo + "\nAno: " + ano + "\nPlaca: " + placa + "\nDiaria: " + diaria + "\nAssentos: " + assentos +"\n";
+    }
 }

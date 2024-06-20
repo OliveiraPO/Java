@@ -1,6 +1,10 @@
 package model;
 
-public abstract class Veiculo {
+import java.io.Serializable;
+import java.util.List;
+
+public abstract class Veiculo implements Comparable <Veiculo>, Serializable{
+    private static final long serialVersionUID = 1L;
     private int id;
     private String marca;
 
@@ -23,6 +27,7 @@ public abstract class Veiculo {
         this.marca = marca;
     }
 
+
     public abstract float getDiaria();
 
     public abstract String getModelo();
@@ -31,10 +36,29 @@ public abstract class Veiculo {
 
     public abstract void setDiaria(float diaria);
 
-    public abstract int getQuantidadeDisponivel();
+    public abstract String getPlaca();
+    
+    public abstract void setModelo(String modelo);
 
-    public abstract void setQuantidadeDisponivel(int quantidadeDisponivel);
+    public abstract void setAno(int ano);
 
+    public abstract void setPlaca(String placa);
+
+    public abstract void setAssentos(int assentos);
+
+    public static Veiculo verificarVeiculoExistente(List<Veiculo> lista, String placa) {
+        for (Veiculo veiculo : lista) {
+            if (veiculo.getPlaca().equalsIgnoreCase(placa)) {
+                return veiculo;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public int compareTo(Veiculo veiculo) {
+        return marca.compareTo(veiculo.getMarca());
+    }
     @Override
     public String toString() {
         return "\nId: " + id + "\nMarca: " + marca;

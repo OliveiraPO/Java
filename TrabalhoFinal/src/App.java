@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 import controler.VeiculoController;
+import view.VeiculoView;
 
 
 public class App {
@@ -21,38 +22,9 @@ public class App {
         Locacao l1 = new Locacao(c1, user1);
 
         System.out.println(l1.toString());*/
-      System.out.println("Seja bem vido à Java-i Locar!\n\n");
-      int escolha;
-      do{  
-        System.out.println("**** MENU ****\n");
-        @SuppressWarnings("resource")
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("1. Cadastrar veículo");
-        System.out.println("2. Veículos disponíveis");
-        System.out.println("3. Alterar diária do veículo");
-        System.out.println("4. Deletar veículo");
-        System.out.println("0. Sair");
-        System.out.println("Escolha uma opção: ");
-        escolha = scanner.nextInt();
-
-        switch (escolha) {
-          case 1:
-              VeiculoController.cadastrarVeiculo();
-            break;
-          case 2:
-              VeiculoController.listaVeiculos();
-          break;
-          case 3:
-              VeiculoController.alterarVeiculo();
-          break;
-          case 4:
-              VeiculoController.deletarVeiculo();
-          break;
-        
-          default:
-            break;
-        }
-      }while(escolha!=0);
+      System.out.println("\nSeja bem vido à Java-i Locar!\n\n");
+      
+      VeiculoView.menuVeículo();
 
 
     }
